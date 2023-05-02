@@ -1,0 +1,81 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "Varela Round", sans-serif;
+  line-height: 3rem;
+  font-size: 20px;
+  text-align: center;
+  background-image: url("https://img.freepik.com/free-vector/hand-drawn-collage-design_23-2149543516.jpg?t=st=1682942263~exp=1682942863~hmac=002120738e1420dd2a9f0069235903dee70f56c2c2ab9bd211e36ecf9bd6dd98");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+h1 {
+  line-height: 5rem;
+  font-size: 40px;
+}
+.container {
+  max-width: 1200px;
+  padding: 20px;
+  margin: 10vh auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+/* input {
+  background-color: rgba(93, 164, 94, 0.121);
+  margin: 0px 10px;
+  outline: 0;
+  border-bottom: 1px dashed;
+  border-width: 0 0 2px;
+  border-color: blue;
+  height: 20px;
+  padding: 10px;
+  border-width: 2px;
+
+  border-spacing: 10px;
+} */
+input {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 2px solid #999;
+ margin: 0px 10px;
+ height: 30px;
+ padding: 3px 7px;
+ border-radius: 10px 10px 0px 0px;
+ background: #ffffff7c;
+}
+
+input:focus {
+  border-color: green;
+  outline: none;
+}
+
+.madLibsEdit {
+  background-color: aqua;
+  padding: 10px;
+  position: relative;
+  margin: auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 800px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+}
+.madLibsPreview {
+  background-color: red;
+  padding: 10px;
+  position: relative;
+  margin: auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 800px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+}
+

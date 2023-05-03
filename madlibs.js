@@ -25,7 +25,7 @@ function checkInput(words) {
     let text = "";
     for (let i = 0; i < words.length; i++) {
       const word = words[i];
-  
+
       text += word.word;
       text += " ";
     }
@@ -35,15 +35,15 @@ function checkInput(words) {
     const word = words[i];
     if (word.pos === "n" || word.pos === "v" || word.pos === "a") {
       const input = document.createElement("input");
-      input.type = "text";
-      input.maxLength='20';
       if (word.pos === "n") {
-        input.placeholder = "noun";
+        input.placeholder = "Noun";
       } else if (word.pos === "v") {
-        input.placeholder = "verb";
+        input.placeholder = "Verb";
       } else if (word.pos === "a") {
-        input.placeholder = "adj";
+        input.placeholder = "Adjective";
       }
+      input.type = "text";
+      input.maxLength = '20';
       input.className = "word-input";
       input.dataset.index = i;
       input.dataset.pos = word.pos;
@@ -56,11 +56,21 @@ function checkInput(words) {
         words[index].word = value;
         const updatedText = generateText(words);
         madLibsPreview.innerHTML = updatedText;
-      });
+      })
+      input.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          const nextInput = input.nextElementSibling;
+          if (nextInput) {
+            nextInput.focus();
+          }
+        }
+      })
+
     } else {
       resultTwo.push(word.word);
     }
-  }
+  };
 
   madLibsEdit.innerHTML = "";
   resultTwo.forEach((item) => {

@@ -25,7 +25,7 @@ function checkInput(words) {
     let text = "";
     for (let i = 0; i < words.length; i++) {
       const word = words[i];
-  
+
       text += word.word;
       text += " ";
     }
@@ -56,26 +56,21 @@ function checkInput(words) {
         words[index].word = value;
         const updatedText = generateText(words);
         madLibsPreview.innerHTML = updatedText;
-      });
+      })
+      input.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          const nextInput = input.nextElementSibling;
+          if (nextInput) {
+            nextInput.focus();
+          }
+        }
+      })
+
     } else {
       resultTwo.push(word.word);
     }
-  }
-
-const inputsArray = document.querySelectorAll(".word-input")
-inputsArray.forEach(input => {
-  input.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-      const currentInput = document.activeElement;
-      for (let i = 0; i < inputsArr.length; i++) {
-        if (inputsArr[i] === currentInput && i !== inputsArr.length - 1) {
-          inputsArr[i + 1].focus()
-        }
-      }
-    }
-  })
-})
-
+  };
 
   madLibsEdit.innerHTML = "";
   resultTwo.forEach((item) => {

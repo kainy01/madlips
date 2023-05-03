@@ -36,11 +36,11 @@ function checkInput(words) {
     if (word.pos === "n" || word.pos === "v" || word.pos === "a") {
       const input = document.createElement("input");
       if (word.pos === "n") {
-        input.placeholder = "noun";
+        input.placeholder = "Noun";
       } else if (word.pos === "v") {
-        input.placeholder = "verb";
+        input.placeholder = "Verb";
       } else if (word.pos === "a") {
-        input.placeholder = "adj";
+        input.placeholder = "Adjective";
       }
       input.type = "text";
       input.maxLength = '20';

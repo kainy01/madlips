@@ -35,8 +35,6 @@ function checkInput(words) {
     const word = words[i];
     if (word.pos === "n" || word.pos === "v" || word.pos === "a") {
       const input = document.createElement("input");
-      input.type = "text";
-      input.maxLength='20';
       if (word.pos === "n") {
         input.placeholder = "noun";
       } else if (word.pos === "v") {
@@ -44,6 +42,8 @@ function checkInput(words) {
       } else if (word.pos === "a") {
         input.placeholder = "adj";
       }
+      input.type = "text";
+      input.maxLength = '20';
       input.className = "word-input";
       input.dataset.index = i;
       input.dataset.pos = word.pos;
@@ -61,6 +61,21 @@ function checkInput(words) {
       resultTwo.push(word.word);
     }
   }
+
+const inputsArray = document.querySelectorAll(".word-input")
+inputsArray.forEach(input => {
+  input.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      const currentInput = document.activeElement;
+      for (let i = 0; i < inputsArr.length; i++) {
+        if (inputsArr[i] === currentInput && i !== inputsArr.length - 1) {
+          inputsArr[i + 1].focus()
+        }
+      }
+    }
+  })
+})
+
 
   madLibsEdit.innerHTML = "";
   resultTwo.forEach((item) => {

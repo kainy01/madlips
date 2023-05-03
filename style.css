@@ -13,8 +13,8 @@ body {
   background-repeat: no-repeat;
 }
 h1 {
-  line-height: 5rem;
-  font-size: 40px;
+  line-height: 3rem;
+  font-size: 2.5rem;
 }
 .container {
   max-width: 1200px;
@@ -42,16 +42,17 @@ input {
   border-right: none;
   border-left: none;
   border-bottom: 2px solid #999;
+  max-width: 5em;
  margin: 0px 10px;
  height: 30px;
  padding: 3px 7px;
- border-radius: 10px 10px 0px 0px;
+ border-radius: 10px 10px 10px 10px;
  background: #ffffff7c;
 }
 
 input:focus {
-  border-color: green;
-  outline: none;
+  /* border-color: green; */
+  outline-color: rgb(31, 69, 31);
 }
 
 .madLibsEdit {
